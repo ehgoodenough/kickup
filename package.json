@@ -5,6 +5,7 @@
   "license": "UNLICENSED",
   "private": true,
   "main": "electron.js",
+  "author": "Andrew McPherson <@ehgoodenough>",
   "contributors": [
     "Andrew McPherson <@ehgoodenough>"
   ],
@@ -13,13 +14,16 @@
     "url": "https://github.com/ehgoodenough/backpackage"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder --config=electron.yml --macos --windows"
   },
   "engines": {
     "node": ">=14",
     "npm": ">=6"
   },
-  "dependencies": {
-    "electron": "^11.2.1"
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-builder": "^22.9.1"
   }
 }
