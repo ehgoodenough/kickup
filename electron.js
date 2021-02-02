@@ -22,7 +22,7 @@ Electron.app.on("ready", function() {
     browser.loadURL(file)
     browser.removeMenu()
 
-    Electron.dialog.showOpenDialog({"properties": ["openFile", "openDirectory"]}).then((response) => {
+    Electron.dialog.showOpenDialog({"properties": ["openFile"]}).then((response) => {
         if(response.canceled == true) return
 
         const filePath = response.filePaths[0]
