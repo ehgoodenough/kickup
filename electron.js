@@ -3,8 +3,8 @@ const path = require("path")
 const Electron = require("electron")
 
 const frame = {
-    "width": 1555, // in pixels
-    "height": 900, // in pixels
+    "width": 500, // in pixels
+    "height": 800, // in pixels
 }
 
 let browser = undefined
@@ -21,6 +21,16 @@ Electron.app.on("ready", function() {
     browser.on("closed", () => browser = undefined)
     browser.loadURL(file)
     browser.removeMenu()
+
+    Electron.dialog.showOpenDialog({"properties": ["openFile", "openDirectory"]}).then((response) => {
+        if(response.canceled == true) return
+
+        const filePath = response.filePaths[0]
+        if(filePath == undefined) return
+
+        process.chdir(path.dirname(filePath))
+        require(filePath)
+    })
 })
 
 Electron.app.on("window-all-closed", function() {
