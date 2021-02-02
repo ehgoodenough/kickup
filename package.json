@@ -1,0 +1,25 @@
+{
+  "name": "backpackage",
+  "version": "0.0.0",
+  "description": "...",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "electron.js",
+  "contributors": [
+    "Andrew McPherson <@ehgoodenough>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehgoodenough/backpackage"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": ">=6"
+  },
+  "dependencies": {
+    "electron": "^11.2.1"
+  }
+}

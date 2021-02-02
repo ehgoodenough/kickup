@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="language" content="en_us"/>
+        <meta http-equiv="Content-Type" content="text/html"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <title>Frog Tactics is Loading...</title>
+    </head>
+    <body>
+        <style>
+            .mount {
+                top: 0em;
+                left: 0em;
+                right: 0em;
+                bottom: 0em;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background-color: #FFF;
+
+                animation-name: fade-in;
+                animation-duration: 2s;
+            }
+            // https://github.com/jlong/css-spinners/blob/master/css/spinner/spinner.css
+            @-moz-keyframes spinner {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            @-webkit-keyframes spinner {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes spinner {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes fade-in {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+            #spinner {
+                border-radius: 0.5em;
+                animation: spinner 1500ms infinite linear;
+                box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;
+                font-size: 10px;
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                margin: 1.5em;
+                overflow: hidden;
+                text-indent: 100%;
+            }
+            #text {
+                margin: 1em 0em;
+            }
+            #logo {
+                width: 3em;
+                height: 3em;
+
+                image-rendering: pixelated;
+            }
+        </style>
+        <div class="mount">
+            <div class="modal">
+                <div id="text">Building! Please wait.</div>
+                <div id="spinner"></div>
+            </div>
+        </div>
+        <script>
+            const EXPECTED_BUILD_TIME = 30 * 1000 // in milliseconds
+            window.setTimeout(function() {
+                document.getElementById("text").innerHTML = "Huh. It shouldn't take this so long.<br/>Maybe something went wrong?"
+            }, EXPECTED_BUILD_TIME)
+        </script>
+    </body>
+</html>
